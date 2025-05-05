@@ -88,13 +88,14 @@ DATABASES = {
 
 CONN_MAX_AGE = config("CONN_MAX_AGE", cast=int, default=300)
 DATABASE_URL = config("DATABASE_URL", default=None)
+print(DATABASE_URL)
 
 if DATABASE_URL is not None:
     import dj_database_url
 
     DATABASES = {
         "default": dj_database_url.config(
-            default=DATABASE_URL,
+            default="postgresql://neondb_owner:npg_JBbZtwTXzO85@ep-weathered-fire-a27k4hyp.eu-central-1.aws.neon.tech/neondb?sslmode=require",
             conn_max_age=CONN_MAX_AGE,
             conn_health_checks=True,
         )
