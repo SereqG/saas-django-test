@@ -65,6 +65,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "cfehome.wsgi.application"
+DATABASE_URL = config("DATABASE_URL")
+
+print(DATABASE_URL)
 
 # Database configuration
 DATABASES = {
